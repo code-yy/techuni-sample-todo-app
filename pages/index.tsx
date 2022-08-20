@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   const completeTodo = (index: number): void => {
     const newCompleteTodos = [...completeTodos, incompleteTodos[index]];
-    const newIncompleteTodos = incompleteTodos.filter((_, i) => i !== index);
+    const newIncompleteTodos = incompleteTodos.filter((todo, i) => i !== index);
     setCompleteTodos(newCompleteTodos);
     setIncompleteTodos(newIncompleteTodos);
   };
@@ -62,6 +62,7 @@ const Home: NextPage = () => {
                 <Checkbox
                   label={incompleteTodo}
                   onChange={() => completeTodo(index)}
+                  checked={false}
                 />
               </li>
             );
